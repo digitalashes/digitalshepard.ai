@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+@import "~/assets/css/typography.css";
+@import "~/assets/css/markdown.css";
+
+@theme static {
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+    scrollbar-width: thin !important;
+    scroll-behavior: smooth;
+    scroll-margin-top: calc(var(--ui-header-height) + 1rem) !important;
+}
