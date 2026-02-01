@@ -1,0 +1,22 @@
+# Your Digital Commander Shepard
+
+> One shepherd to rule them all
+
+AI governance blog about human-in-the-loop, MCP, the almighty Context, tokens, and other delights, goodies, and small optimizations.
+
+## Topics
+
+- AI governance frameworks
+- Human-in-the-loop architectures
+- Automation with guardrails
+- AI tool reviews through a governance lens
+
+## Links
+
+- Website: https://digitalshepard.ai
+- Articles: https://digitalshepard.ai/articles
+- About: https://digitalshepard.ai/about
+- Tags: https://digitalshepard.ai/tags
+- Archive: https://digitalshepard.ai/archive
+- RSS Feed: https://digitalshepard.ai/feed.xml
+- GitHub: https://github.com/shepard-system
