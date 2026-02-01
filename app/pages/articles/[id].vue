@@ -78,10 +78,6 @@ const authorEl = ref<HTMLElement | null>();
 const clipboard = useClipboard();
 const toast = useToast();
 
-function formatDate(date: string | Date) {
-  return new Intl.DateTimeFormat("en-GB", {day: "2-digit", month: "short", year: "numeric"}).format(new Date(date));
-}
-
 function readingTime(text?: string) {
   if (!text) return "1 min read";
   const minutes = Math.max(1, Math.ceil(text.split(/\s+/).length / 200));
@@ -125,7 +121,7 @@ function updateMeta() {
       headline: data.value?.title,
       description: data.value?.description,
       image: data.value?.thumbnail,
-      datePublished: new Date(data.value?.date).toISOString(),
+      datePublished: toISODateString(data.value?.date),
       keywords: data.value?.tags,
       author: {
         name: data.value?.author,
@@ -144,15 +140,6 @@ function updateMeta() {
   useSeoMeta({
     title: data.value?.title,
     description: data.value?.description,
-  });
-
-  defineOgImageComponent("Article", {
-    thumbnail: data.value?.thumbnail,
-    title: data.value?.title,
-    author: {
-      name: data.value?.author,
-      image: data.value?.author_avatar,
-    },
   });
 }
 

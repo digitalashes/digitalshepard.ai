@@ -34,9 +34,5 @@ useSeoMeta({
   description: "Dispatches on AI governance — taming the chaos, one statute at a time.",
 });
 
-function formatDate(date: string | Date) {
-  return new Intl.DateTimeFormat("en-GB", {day: "2-digit", month: "short", year: "numeric"}).format(new Date(date));
-}
-
 const {data: articles} = await useAsyncData("articles-listing", () => queryCollection("articles").order("date", "DESC").all());
 </script>

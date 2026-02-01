@@ -29,16 +29,12 @@ useSeoMeta({
     description: "All articles on Digital Shepard, chronologically",
 });
 
-function formatShortDate(date: string | Date) {
-    return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "short" }).format(new Date(date));
-}
-
 const { data: articles } = await useAsyncData("articles-archive", () => queryCollection("articles").order("date", "DESC").all());
 
 const grouped = computed(() => {
     const map = new Map<number, typeof articles.value>();
     for (const article of articles.value ?? []) {
-        const year = new Date(article.date).getFullYear();
+        const year = getDateYear(article.date);
         if (!map.has(year)) map.set(year, []);
         map.get(year)!.push(article);
     }

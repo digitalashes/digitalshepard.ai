@@ -45,9 +45,5 @@ useSeoMeta({
     description: appMeta.description,
 });
 
-function formatDate(date: string | Date) {
-    return new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "short", year: "numeric" }).format(new Date(date));
-}
-
 const { data: articles } = await useAsyncData("articles-home", () => queryCollection("articles").order("date", "DESC").all());
 </script>
