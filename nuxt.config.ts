@@ -19,11 +19,11 @@ export default defineNuxtConfig({
             ],
             script: [
                 {
-                    src: "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",
+                    src: "https://www.googletagmanager.com/gtag/js?id=G-77LD3MNPLS",
                     async: true,
                 },
                 {
-                    innerHTML: "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');",
+                    innerHTML: "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-77LD3MNPLS');",
                 },
             ],
         },
