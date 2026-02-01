@@ -15,7 +15,7 @@ export default defineContentConfig({
                     author: z.string(),
                     author_avatar: z.string(),
                     author_description: z.string(),
-                    thumbnail: z.string(),
+                    thumbnail: z.optional(z.string()),
                     rawbody: z.string(),
                 }),
             })

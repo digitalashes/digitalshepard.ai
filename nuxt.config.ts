@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     ssr: false,
     ogImage: { enabled: false },
     devtools: { enabled: true },
+    colorMode: {
+        preference: "dark",
+    },
     app: {
         head: {
             htmlAttrs: { lang: "en" },
