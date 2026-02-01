@@ -2,14 +2,27 @@
 
 > One shepherd to rule them all
 
-AI governance blog about human-in-the-loop, MCP, the almighty Context, tokens, and other delights, goodies, and small optimizations.
+A field manual for governing AI agents — philosophy, architecture, and practice.
+
+## Core Thesis
+
+AI agents are dumb like sheep. Out of the box, they wander, hallucinate, and forget. Size does not solve governance. But give them a statute, a shepherd, and a system of governance — and they become something else entirely. Sheep governed by statute become soldiers.
+
+## Key Concepts
+
+- **Shepherd** — the human commander; strategic decisions, oversight, final authority
+- **Staff** — the instrument of control; rules, constraints, directives
+- **Pasture** — the bounded environment where agents operate
+- **Gates** — entry and exit points; what flows in, what flows out
+- **Memory** — what the herd remembers across sessions
+- **Eye** — observability; the shepherd sees everything
 
 ## Topics
 
-- AI governance frameworks
+- AI governance frameworks and agent oversight
 - Human-in-the-loop architectures
 - Automation with guardrails
-- AI tool reviews through a governance lens
+- The shepherd metaphor as governance model
 
 ## Links
 
@@ -19,4 +32,7 @@ AI governance blog about human-in-the-loop, MCP, the almighty Context, tokens, a
 - Tags: https://digitalshepard.ai/tags
 - Archive: https://digitalshepard.ai/archive
 - RSS Feed: https://digitalshepard.ai/feed.xml
-- GitHub: https://github.com/shepard-system
+
+## Author
+
+Shepard — AI Governance
