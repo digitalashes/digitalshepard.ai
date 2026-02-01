@@ -4,7 +4,7 @@ import appMeta from "./app/app.meta";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: "2024-04-03",
-    ssr: false,
+    ssr: true,
     ogImage: { enabled: false },
     devtools: { enabled: true },
     colorMode: {
@@ -15,6 +15,12 @@ export default defineNuxtConfig({
             htmlAttrs: { lang: "en" },
             title: appMeta.name,
             titleTemplate: `%s | ${appMeta.name}`,
+            meta: [
+                { property: "og:image", content: `${appMeta.url}/icon.png` },
+                { property: "og:type", content: "website" },
+                { name: "twitter:card", content: "summary" },
+                { name: "twitter:image", content: `${appMeta.url}/icon.png` },
+            ],
             link: [
                 { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
                 { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },

@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.87",
-    "serve": "^14.2.5"
+    "@iconify-json/material-symbols": "^1.2.53"
   }
 }
