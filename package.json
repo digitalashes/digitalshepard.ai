@@ -1,6 +1,7 @@
 {
   "name": "digitalshepard-ai",
   "private": true,
+  "packageManager": "pnpm@10.28.2",
   "type": "module",
   "scripts": {
     "build": "nuxt build",
