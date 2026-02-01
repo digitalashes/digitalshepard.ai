@@ -141,14 +141,14 @@ function updateMeta() {
     title: data.value?.title,
     description: data.value?.description,
   });
-  defineOgImageComponent("Article", {
-    thumbnail: data.value?.thumbnail,
-    title: data.value?.title,
-    author: {
-      name: data.value?.author,
-      image: data.value?.author_avatar,
-    },
-  });
+  // defineOgImageComponent("Article", {
+  //   thumbnail: data.value?.thumbnail,
+  //   title: data.value?.title,
+  //   author: {
+  //     name: data.value?.author,
+  //     image: data.value?.author_avatar,
+  //   },
+  // });
 }
 
 onMounted(() => {

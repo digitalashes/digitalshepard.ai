@@ -33,8 +33,8 @@ const navItems: NavigationMenuItem[] = [
   {label: "Home", icon: "i-lucide-house", to: "/"},
   {label: "Articles", icon: "material-symbols:article-rounded", to: "/articles"},
   {label: "About", icon: "i-lucide-user", to: "/about"},
-  {label: "RSS", icon: "i-lucide-rss", to: "/feed.xml", target: "_blank"},
-  {label: "llms.txt", icon: "i-lucide-bot", to: "/llms.txt", target: "_blank"},
+  {label: "RSS", icon: "i-lucide-rss", to: "/feed.xml", target: "_blank", external: true},
+  {label: "llms.txt", icon: "i-lucide-bot", to: "/llms.txt", target: "_blank", external: true},
 ];
 
 const {data: navigation} = await useAsyncData("navigation", () => queryCollectionNavigation("articles"));
