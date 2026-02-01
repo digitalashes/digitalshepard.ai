@@ -4,7 +4,8 @@
             <div class="flex flex-col gap-6 items-stretch w-full">
                 <div class="flex flex-col gap-2">
                     <h1 class="typ-title">Articles</h1>
-                    <p class="text-muted">Thoughts on AI governance, automation, and keeping humans in the loop.</p>
+                    <p class="text-muted">Reflections on AI Governance and Automation: Keeping the AI Bordello Under Control</p>
+                    <p class="text-muted">Thoughts on Taming the Chaos</p>
                 </div>
                 <u-separator />
                 <u-field-group>
