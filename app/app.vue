@@ -1,42 +1,44 @@
 <template>
-    <u-app>
-        <u-header>
-            <template #left>
-                <nuxt-link to="/" class="flex items-center gap-2 font-bold" style="font-family: var(--font-display)">
-                    <site-logo :size="28" />
-                    <span>Digital Shepard</span>
-                </nuxt-link>
-            </template>
-            <template #right>
-                <color-mode-button />
-            </template>
-            <u-navigation-menu :items="navItems" />
-        </u-header>
-        <u-main>
-            <u-container>
-                <nuxt-page />
-            </u-container>
-        </u-main>
-        <u-footer class="border-t border-t-default">
-            <template #left>
-                <p class="text-sm text-muted">&copy; {{ new Date().getFullYear() }} Digital Shepard</p>
-            </template>
-            <template #right>
-                <div class="flex items-center gap-3">
-                    <nuxt-link to="/feed.xml" class="text-sm text-muted hover:text-highlighted" target="_blank">RSS</nuxt-link>
-                    <nuxt-link to="https://github.com/shepard-system" class="text-sm text-muted hover:text-highlighted" target="_blank">GitHub</nuxt-link>
-                </div>
-            </template>
-        </u-footer>
-    </u-app>
+  <u-app>
+    <u-header>
+      <template #left>
+        <u-navigation-menu :items="navItems"/>
+      </template>
+      <template #right>
+        <div class="flex items-center gap-1">
+          <u-content-search-button variant="ghost" color="neutral" icon="i-lucide-search" label=""/>
+          <color-mode-button/>
+        </div>
+      </template>
+    </u-header>
+    <u-main>
+      <u-container>
+        <nuxt-page/>
+      </u-container>
+    </u-main>
+    <u-footer class="border-t border-t-default">
+      <p class="text-sm text-muted w-full text-center">&copy; {{ new Date().getFullYear() }} Digital Shepard</p>
+    </u-footer>
+    <client-only>
+      <u-content-search :search-term="query" shortcut="meta_k" :files="files" :navigation="navigation"
+                        :fuse="{ resultLimit: 42 }"/>
+    </client-only>
+  </u-app>
 </template>
 
 <script lang="ts" setup>
-import type { NavigationMenuItem } from "@nuxt/ui";
+import type {NavigationMenuItem} from "@nuxt/ui";
 
 const navItems: NavigationMenuItem[] = [
-    { label: "Articles", icon: "material-symbols:article-rounded", to: "/articles" },
-    { label: "About", icon: "i-lucide-user", to: "/about" },
-    { label: "GitHub", icon: "mdi:github", target: "_blank", to: "https://github.com/shepard-system" },
+  {label: "Articles", icon: "material-symbols:article-rounded", to: "/articles"},
+  {label: "About", icon: "i-lucide-user", to: "/about"},
+  {label: "RSS", icon: "i-lucide-rss", to: "/feed.xml", target: "_blank"},
+  {label: "llms.txt", icon: "i-lucide-bot", to: "/llms.txt", target: "_blank"},
 ];
+
+const {data: navigation} = await useAsyncData("navigation", () => queryCollectionNavigation("articles"));
+const {data: files} = useLazyAsyncData("search", () => queryCollectionSearchSections("articles"), {
+  server: false,
+});
+const query = ref("");
 </script>

@@ -2,7 +2,7 @@
     <u-app>
         <u-header>
             <template #left>
-                <u-user name="Digital Shepard" to="/" :avatar="{ src: '/icon.png' }"></u-user>
+                <u-user name="Digital Shepard" to="/" :avatar="{ src: '/apple-touch-icon.png' }"></u-user>
             </template>
         </u-header>
         <u-main class="px-4">

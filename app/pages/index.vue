@@ -2,42 +2,36 @@
     <u-page>
         <u-page-body>
             <div class="flex flex-col gap-6 items-stretch mt-4 w-full mx-auto">
-                <div class="flex flex-col gap-2">
-                    <h1 class="typ-title">Digital Shepard</h1>
-                    <p class="text-muted">AI governance blog — human-in-the-loop commanding a squad of specialists.</p>
+                <div class="flex flex-col gap-3">
+                    <h1 class="typ-title">One <s>Ring</s> Shepherd to rule them all.</h1>
+                    <p>AI agents are dumb like sheep. Out of the box, they wander. They hallucinate. They forget.</p>
+                    <p>But give them a statute, a shepherd, and a system of governance... and they become something else entirely.</p>
+                    <p class="text-muted">This is a field manual for those who command, not follow.</p>
                 </div>
 
                 <u-separator />
 
-                <u-field-group>
-                    <u-content-search-button variant="outline">
-                        <div class="flex items-center gap-4">
-                            Search articles
-                            <div class="flex gap-1 items-center">
-                                <u-kbd variant="soft">CTRL</u-kbd>
-                                <u-kbd variant="soft">K</u-kbd>
-                            </div>
-                        </div>
-                    </u-content-search-button>
-                </u-field-group>
-                <client-only>
-                    <u-content-search v-model:search-term="query" shortcut="meta_k" :files="files" :navigation="navigation" :fuse="{ resultLimit: 42 }" />
-                </client-only>
+                <div class="flex flex-col gap-3">
+                    <h2 class="typ-subtitle">Dispatches</h2>
+                    <u-empty
+                        v-if="(articles?.length ?? 0) <= 0"
+                        title="No dispatches yet"
+                        description="The first signal is incoming. Stand by."
+                        variant="naked"
+                    />
+                    <ul v-else class="flex flex-col gap-3">
+                        <li v-for="article in articles" :key="article.path" class="flex justify-between items-baseline gap-4">
+                            <nuxt-link :to="article.path" class="text-highlighted hover:text-primary hover:underline">
+                                {{ article.title }}
+                            </nuxt-link>
+                            <time class="text-muted text-sm shrink-0">{{ formatDate(article.date) }}</time>
+                        </li>
+                    </ul>
+                </div>
 
-                <u-empty
-                    v-if="(articles?.length ?? 0) <= 0"
-                    title="No articles yet"
-                    description="Check back soon for new content on AI governance."
-                    variant="naked"
-                />
-                <ul v-else class="flex flex-col gap-3">
-                    <li v-for="article in articles" :key="article.path" class="flex justify-between items-baseline gap-4">
-                        <nuxt-link :to="article.path" class="text-highlighted hover:text-primary hover:underline">
-                            {{ article.title }}
-                        </nuxt-link>
-                        <time class="text-muted text-sm shrink-0">{{ formatDate(article.date) }}</time>
-                    </li>
-                </ul>
+                <u-separator />
+
+                <p class="text-muted">The system has a name. The agents have a codex. More will be revealed.</p>
             </div>
         </u-page-body>
     </u-page>
@@ -47,7 +41,7 @@
 import appMeta from "~/app.meta";
 
 useSeoMeta({
-    title: appMeta.name,
+    title: "Home",
     description: appMeta.description,
 });
 
@@ -56,9 +50,4 @@ function formatDate(date: string | Date) {
 }
 
 const { data: articles } = await useAsyncData("articles-home", () => queryCollection("articles").order("date", "DESC").all());
-const { data: navigation } = await useAsyncData("navigation", () => queryCollectionNavigation("articles"));
-const { data: files } = useLazyAsyncData("search", () => queryCollectionSearchSections("articles"), {
-    server: false,
-});
-const query = ref("");
 </script>
