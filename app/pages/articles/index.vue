@@ -31,7 +31,7 @@
 <script lang="ts" setup>
 useSeoMeta({
   title: "Articles",
-  description: "All articles on Digital Shepard",
+  description: "Dispatches on AI governance — taming the chaos, one statute at a time.",
 });
 
 function formatDate(date: string | Date) {
