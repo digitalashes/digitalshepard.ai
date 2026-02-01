@@ -14,6 +14,7 @@ export default defineNuxtConfig({
         head: {
             htmlAttrs: { lang: "en" },
             title: appMeta.name,
+            titleTemplate: `%s | ${appMeta.name}`,
             link: [
                 { rel: "alternate", type: "application/rss+xml", title: "Digital Shepard RSS", href: "/feed.xml" },
             ],
