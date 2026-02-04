@@ -17,6 +17,9 @@ export default defineContentConfig({
                     author_description: z.string(),
                     thumbnail: z.optional(z.string()),
                     rawbody: z.string(),
+                    sitemap: z.object({
+                        lastmod: z.date(),
+                    }).optional(),
                 }),
             })
         ),

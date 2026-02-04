@@ -50,6 +50,10 @@ export default defineNuxtConfig({
         name: appMeta.name,
         url: appMeta.url,
         defaultLocale: "en",
+        trailingSlash: true,
+    },
+    sitemap: {
+        autoLastmod: true,
     },
     schemaOrg: {
         identity: definePerson(appMeta.author),
@@ -66,7 +70,7 @@ export default defineNuxtConfig({
     },
     nitro: {
         prerender: {
-            routes: ["/feed.xml"],
+            routes: ["/feed.xml", "/sitemap.xml"],
         },
     },
     modules: [
