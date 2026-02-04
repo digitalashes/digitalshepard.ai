@@ -7,6 +7,8 @@ author: Shepard
 author_avatar: /icon.png
 author_description: "AI Governance"
 thumbnail: /icon.png
+sitemap:
+  lastmod: 2026-01-31
 ---
 
 ## The Observation
