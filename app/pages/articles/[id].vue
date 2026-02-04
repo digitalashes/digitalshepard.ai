@@ -33,7 +33,7 @@
               @click="() => authorEl?.scrollIntoView()"
           />
           <div class="flex flex-row gap-2 items-center flex-wrap">
-            <nuxt-link v-for="k in data?.tags" :key="k" :to="`/tags/${k}`">
+            <nuxt-link v-for="k in data?.tags" :key="k" :to="`/tags/${k}/`">
               <u-badge color="primary" variant="soft" class="hover:opacity-80">{{ k }}</u-badge>
             </nuxt-link>
           </div>
@@ -58,7 +58,7 @@
       <p class="font-semibold">Related articles</p>
       <ul class="flex flex-col gap-3">
         <li v-for="article in links" :key="article.path" class="flex justify-between items-baseline gap-4">
-          <nuxt-link :to="article.path" class="text-highlighted hover:text-primary hover:underline">
+          <nuxt-link :to="article.path + '/'" class="text-highlighted hover:text-primary hover:underline">
             {{ article.title }}
           </nuxt-link>
           <time class="text-muted text-sm shrink-0">{{ formatDate(article.date) }}</time>
@@ -100,7 +100,7 @@ const {data: surround} = await useAsyncData(`${route.path}-surround`, () => {
 });
 
 const breadcrumbItems = computed(() => [
-  {label: "Articles", to: "/articles"},
+  {label: "Articles", to: "/articles/"},
   {label: data.value?.title ?? ""},
 ]);
 

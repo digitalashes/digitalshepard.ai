@@ -4,7 +4,7 @@
       <div class="flex flex-col gap-6 items-stretch w-full">
         <div class="flex flex-col gap-2">
           <h1 class="typ-title">Posts tagged "{{ tag }}"</h1>
-          <nuxt-link to="/tags" class="text-sm text-muted hover:text-primary hover:underline">&larr; All tags
+          <nuxt-link to="/tags/" class="text-sm text-muted hover:text-primary hover:underline">&larr; All tags
           </nuxt-link>
         </div>
         <u-separator/>
@@ -13,11 +13,11 @@
             title="No articles found"
             :description="`No articles tagged '${tag}' yet.`"
             variant="naked"
-            :actions="[{ label: 'All tags', to: '/tags' }]"
+            :actions="[{ label: 'All tags', to: '/tags/' }]"
         />
         <ul v-else class="flex flex-col gap-3">
           <li v-for="article in filtered" :key="article.path" class="flex justify-between items-baseline gap-4">
-            <nuxt-link :to="article.path" class="text-highlighted hover:text-primary hover:underline">
+            <nuxt-link :to="article.path + '/'" class="text-highlighted hover:text-primary hover:underline">
               {{ article.title }}
             </nuxt-link>
             <time class="text-muted text-sm shrink-0">{{ formatDate(article.date) }}</time>

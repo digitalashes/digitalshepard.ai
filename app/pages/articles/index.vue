@@ -17,7 +17,7 @@
         />
         <ul v-else class="flex flex-col gap-3">
           <li v-for="article in articles" :key="article.path" class="flex justify-between items-baseline gap-4">
-            <nuxt-link :to="article.path" class="text-highlighted hover:text-primary hover:underline">
+            <nuxt-link :to="article.path + '/'" class="text-highlighted hover:text-primary hover:underline">
               {{ article.title }}
             </nuxt-link>
             <time class="text-muted text-sm shrink-0">{{ formatDate(article.date) }}</time>

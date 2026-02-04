@@ -11,7 +11,7 @@
                     <h2 class="typ-subtitle sticky top-[var(--ui-header-height)] bg-[var(--ui-bg)] py-2 z-10">{{ year }}</h2>
                     <ul class="flex flex-col gap-3">
                         <li v-for="article in posts" :key="article.path" class="flex justify-between items-baseline gap-4">
-                            <nuxt-link :to="article.path" class="text-highlighted hover:text-primary hover:underline">
+                            <nuxt-link :to="article.path + '/'" class="text-highlighted hover:text-primary hover:underline">
                                 {{ article.title }}
                             </nuxt-link>
                             <time class="text-muted text-sm shrink-0">{{ formatShortDate(article.date) }}</time>

@@ -31,8 +31,8 @@ import type {NavigationMenuItem} from "@nuxt/ui";
 
 const navItems: NavigationMenuItem[] = [
   {label: "Home", icon: "i-lucide-house", to: "/"},
-  {label: "Articles", icon: "material-symbols:article-rounded", to: "/articles"},
-  {label: "About", icon: "i-lucide-user", to: "/about"},
+  {label: "Articles", icon: "material-symbols:article-rounded", to: "/articles/"},
+  {label: "About", icon: "i-lucide-user", to: "/about/"},
   {label: "RSS", icon: "i-lucide-rss", to: "/feed.xml", target: "_blank", external: true},
   {label: "llms.txt", icon: "i-lucide-bot", to: "/llms.txt", target: "_blank", external: true},
 ];

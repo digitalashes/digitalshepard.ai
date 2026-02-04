@@ -11,7 +11,7 @@
           <nuxt-link
               v-for="[tag, count] in tagCounts"
               :key="tag"
-              :to="`/tags/${tag}`"
+              :to="`/tags/${tag}/`"
           >
             <u-badge color="primary" variant="soft" size="lg">
               {{ tag }} ({{ count }})
