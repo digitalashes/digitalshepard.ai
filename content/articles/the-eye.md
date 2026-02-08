@@ -13,8 +13,7 @@ sitemap:
 
 ## The Blind Commander
 
-That $47 Tuesday I told you about? Did you remember that?
-I found out from an email. An AWS billing email, at 9 AM, with my coffee going cold on the desk.
+That [$47 Tuesday](/articles/fear-and-loathing-in-the-gas-town/) I told you about – one agent, one night, no supervision? I found out from an email. An AWS billing email, at 9 AM, with my coffee going cold on the desk.
 
 Not from my system. My system had nothing to say. No alert. No dashboard. 
 No blinking red light. Just an agent that had been running unsupervised for eight hours and a billing page that told the story in retrospect – like reading about a car crash in the morning paper when you were the one driving.
@@ -89,7 +88,7 @@ Traces don't lie. Your agent's self-reported "task completed efficiently" does.
 
 ## Four Questions
 
-A shepherd doesn't need a hundred dashboards. A shepherd needs to answer four questions – at any moment, without hesitation.
+A shepherd doesn't need a hundred dashboards. A shepherd needs to answer four questions – at any moment, without hesitation. These aren't SRE questions about uptime and latency. These are *command* questions – the kind a commanding officer asks about a squad in the field.
 
 **"How much is this costing me?"**
 
@@ -113,11 +112,30 @@ Tasks completed versus escalated. Rule violations. Quality trajectory – is the
 
 Three words: **open, standard, yours.**
 
-OpenTelemetry – the instrumentation layer – is a CNCF graduated project. Vendor-agnostic. Industry standard. Your telemetry data speaks the same language whether it ends up in Grafana or gets forwarded somewhere else. You are not locked in. Ever.
+```
+Your System (Shepherd Core, MCP Hub, Agents)
+                    │
+          OpenTelemetry SDK
+                    │
+              OTel Collector
+           ┌────────┼────────┐
+           ▼        ▼        ▼
+       Prometheus   Loki    Tempo
+       (metrics)   (logs)  (traces)
+           └────────┼────────┘
+                    ▼
+                 Grafana
+              ┌────┴────┐
+         Dashboards   Alerts → Slack
+```
 
-One collector. One pipe. All three signals flow through a single OpenTelemetry Collector into their respective stores: Prometheus for metrics, Loki for logs, Tempo for traces. One configuration. One place to debug when something breaks.
+**OpenTelemetry** is not a choice. It's a default. CNCF graduated project, vendor-agnostic, industry standard. Your telemetry speaks the same language regardless of where it ends up. You are not locked in. Ever.
 
-Grafana ties it all together. Dashboards, alerts, exploration – open-source, self-hosted, free.
+**Why Prometheus, Loki, Tempo – and not the alternatives?** Because they're from the same family. Tempo is Grafana Labs' tracing backend – native integration, TraceQL as a query language, zero context switching between metrics, logs, and traces in a single UI. Jaeger is a fine project, but it's a separate ecosystem. When your dashboards, alerts, and exploration live under one roof – that's not convenience. That's operational simplicity.
+
+Loki over Elasticsearch? Elasticsearch's open-source licensing has been a soap opera – Apache 2.0 to SSPL to AGPL, with an AWS fork in the middle. But licensing aside: Elasticsearch is a search engine repurposed for logs. It's a JVM cluster that demands tuning, shard management, and dedicated attention. Loki indexes only labels and stores compressed log lines on cheap storage. It's purpose-built for logs, not repurposed from something else. Simpler to run. Simpler to own.
+
+One collector. One pipe. All three signals flow through a single OTel Collector into their respective stores. One configuration. One place to debug when something breaks.
 
 This is Tenet III: **Own Your Stack.** This is not a Datadog invoice. This is not someone else's SaaS you're renting month to month, hoping they don't change the pricing. This is infrastructure you control.
 
