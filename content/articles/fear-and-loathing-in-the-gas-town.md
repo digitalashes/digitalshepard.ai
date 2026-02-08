@@ -41,13 +41,13 @@ They end.
 
 ## The Morning After
 
-| Resource             | 2026 Status | Crisis Type    |
-|----------------------|-------------|----------------|
-| GPU                  | 🔴 Deficit  | Structural     |
-| HBM / VRAM           | 🔴 Critical | Fundamental    |
-| RAM (DDR5)           | 🟠 Strained | Cyclical       |
-| Power grid           | 🔴 Systemic | Infrastructure |
-| Fabrication          | 🟠 Lagging  | Inertial       |
+| Resource                          | 2026 Status | Crisis Type    |
+|-----------------------------------|-------------|----------------|
+| GPU                               | 🔴 Deficit  | Structural     |
+| HBM / VRAM                        | 🔴 Critical | Fundamental    |
+| RAM (DDR5)                        | 🟠 Strained | Cyclical       |
+| Power grid                        | 🔴 Systemic | Infrastructure |
+| Fabrication                       | 🟠 Lagging  | Inertial       |
 | Engineers who see the whole board | 🔴 Shortage | Terminal       |
 
 If this were a patient, the chart would read: technically alive, spiritually bankrupt, insurance expired 2024.

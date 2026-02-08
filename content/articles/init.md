@@ -27,7 +27,7 @@ The question nobody is asking: **who is in command?**
 
 A shepherd.
 
-Not a bigger model. Not more context. Not another framework. A shepherd - a human who sets the rules, defines the boundaries, and enforces the statute.
+Not a bigger model. Not more context. Not another framework. A shepherd – a human who sets the rules, defines the boundaries, and enforces the statute.
 
 Sheep governed by statute become soldiers. They have a codex. They know what they can do, what they must not do, and who they report to. They operate within pastures, pass through gates, and their actions are observed.
 
@@ -37,10 +37,10 @@ This is not about restricting AI. It is about commanding it.
 
 Each dispatch from this blog reveals one piece of the puzzle:
 
-- **Philosophy** - why governance is the missing layer, and what happens without it
-- **Architecture** - the pieces of the system: pastures, gates, staffs, memory, the eye
-- **Practice** - real configurations, real trade-offs, real failures
-- **Trade-offs** - what you gain, what you lose, and why it is worth it
+- **Philosophy** – why governance is the missing layer, and what happens without it
+- **Architecture** – the pieces of the system: pastures, gates, staffs, memory, the eye
+- **Practice** – real configurations, real trade-offs, real failures
+- **Trade-offs** – what you gain, what you lose, and why it is worth it
 
 No hype. No hand-waving. Field reports from someone building the system.
 
