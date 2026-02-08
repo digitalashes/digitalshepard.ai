@@ -310,7 +310,7 @@ But here's the thing about hangovers: they end. And when the headache clears, yo
 
 You cannot command what you cannot see. And right now, most people running AI agents are completely blind.
 
-Next dispatch: **The Eye**.
+Next dispatch: **[The Eye](/articles/the-eye/)**.
 
 ---
 

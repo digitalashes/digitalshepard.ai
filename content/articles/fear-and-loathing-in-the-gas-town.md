@@ -142,7 +142,7 @@ But before anything else - before rules, before architecture, before the first s
 
 **You cannot command what you cannot see.**
 
-Next dispatch: **The Eye**.
+Next dispatch: **[The Eye](/articles/the-eye/)**.
 
 ::callout{icon="i-lucide-info" color="info"}
 This blog is optimized for both human readers and LLM consumption. Every article follows a clear heading hierarchy and is available via RSS and llms.txt.
