@@ -39,6 +39,13 @@ Capability is modular. Each skill is scoped, testable, and replaceable. Complex 
 - Automation with guardrails
 - The shepherd metaphor as governance model
 
+## Articles
+
+- git commit -m 'init': The first dispatch. Why this blog exists, and what the shepherd sees from the hilltop. https://digitalshepard.ai/articles/init/
+- The Eye: You cannot command what you cannot see. Inside the shepherd's eye – three signals, four questions, and an open-source stack that changes everything. https://digitalshepard.ai/articles/the-eye/
+- Fear and Loathing in the Gas Town: The AI gold rush ate the hardware. The hardware ate the power grid. Nobody is driving. https://digitalshepard.ai/articles/fear-and-loathing-in-the-gas-town/
+- Vibe Coding Apocalypse: Moltbook exposed 1.5M tokens in 5 days. OpenClaw spawned a $16M crypto scam. Inside the vibe coding catastrophe – and why the hangover is just beginning. https://digitalshepard.ai/articles/vibe-coding-apocalypse/
+
 ## Links
 
 - Website: https://digitalshepard.ai
@@ -51,4 +58,4 @@ Capability is modular. Each skill is scoped, testable, and replaceable. Complex 
 
 ## Author
 
-Shepard – AI Governance
+Shepard – Data & Platform Engineer, AI Governance

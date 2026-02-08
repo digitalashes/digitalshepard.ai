@@ -4,40 +4,24 @@
             <div class="flex flex-col gap-8 max-w-[70ch]">
                 <div class="flex flex-col gap-2">
                     <h1 class="typ-title">About</h1>
-                    <p class="text-muted text-lg">The shepherd, the blog, and the system behind it.</p>
+                    <p class="text-muted text-lg">The practitioner behind the field manual.</p>
                 </div>
 
-                <section class="flex flex-col gap-3">
-                    <p>This blog is a field manual for governing AI agents – philosophy, architecture, and practice. Five tenets define the system. They are non-negotiable.</p>
-                    <u-button icon="i-lucide-scroll-text" to="/manifesto/" label="Read the Manifesto" variant="subtle" color="primary" />
-                </section>
-
-                <section class="flex flex-col gap-3">
-                    <h2 class="typ-subtitle">Why "Shepard"?</h2>
-                    <p>The name carries a dual meaning.</p>
-                    <p><span class="text-highlighted">Commander Shepard</span> – the protagonist of Mass Effect. A human leader who commands a diverse squad of specialists. Each specialist is powerful on their own, but it is the commander who decides the mission, the rules of engagement, and the acceptable losses. That is the model.</p>
-                    <p><span class="text-highlighted">A shepherd</span> – the oldest governance role in human history. Someone who watches over the flock, guides them to pasture, and keeps the wolves at bay. Not by doing the grazing, but by setting the boundaries.</p>
-                </section>
-
-                <section class="flex flex-col gap-3">
-                    <h2 class="typ-subtitle">What This Blog Covers</h2>
-                    <ul class="list-disc list-inside flex flex-col gap-2 text-muted">
-                        <li><span class="text-highlighted">The governance system</span> – a framework for commanding AI agents at scale</li>
-                        <li><span class="text-highlighted">Architecture</span> – pastures, gates, staffs, memory, the eye – each piece explained</li>
-                        <li><span class="text-highlighted">Practice</span> – real configurations, real trade-offs, real failures</li>
-                        <li><span class="text-highlighted">Philosophy</span> – why governance is the missing layer, and what happens without it</li>
-                    </ul>
-                </section>
-
-                <section class="flex flex-col gap-3">
-                    <h2 class="typ-subtitle">About the Author</h2>
+                <section class="flex flex-col gap-4">
                     <div class="flex items-center gap-3">
                         <u-avatar src="/icon.png" size="lg" />
                         <div>
                             <p class="font-semibold text-highlighted">Shepard</p>
-                            <p class="text-sm text-muted">Building the system. Writing the field manual.</p>
+                            <p class="text-sm text-muted">Data &amp; Platform Engineer &middot; AI Governance</p>
                         </div>
                     </div>
+                    <p>Data and platform engineer responsible for production systems that process petabytes of healthcare pricing data – sole owner of critical infrastructure where downtime isn't an option and regulatory deadlines don't move.</p>
+                    <p>I've shipped AI agent infrastructure, migrated pipelines from Spark to Trino, rewrote critical paths from Python to Rust, and spent enough nights debugging unsupervised agents to know that the governance layer isn't optional – it's the first thing you should build.</p>
+                    <p class="text-muted italic">This blog is the field manual I needed before I could write it.</p>
+                </section>
+
+                <section class="flex flex-col gap-3">
+                    <u-button icon="i-lucide-scroll-text" to="/manifesto/" label="Read the Manifesto" variant="subtle" color="primary" />
                 </section>
 
                 <section class="flex flex-col gap-3">
@@ -55,6 +39,6 @@
 <script lang="ts" setup>
 useSeoMeta({
     title: "About",
-    description: "About Digital Shepard – the shepherd, the blog, and the system behind governing AI agents at scale.",
+    description: "Data and platform engineer building AI agent governance systems. Petabytes of healthcare data, production infrastructure, and the field manual for keeping AI under human command.",
 });
 </script>
