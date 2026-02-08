@@ -2,20 +2,35 @@
 
 > One shepherd to rule them all
 
-A field manual for governing AI agents — philosophy, architecture, and practice.
+A field manual for governing AI agents – philosophy, architecture, and practice.
 
-## Core Thesis
+## The Manifesto
 
-AI agents are dumb like sheep. Out of the box, they wander, hallucinate, and forget. Size does not solve governance. But give them a statute, a shepherd, and a system of governance — and they become something else entirely. Sheep governed by statute become soldiers.
+Five tenets. No negotiation.
+
+### I. Statute is Law
+Agents don't improvise. They execute written rules – or they escalate. The Statute is the authoritative description of how work is done. Not a suggestion. Not a guideline. Law. The rules evolve – every serious failure updates the Statute – but they are always written down.
+
+### II. The Human Commands
+One human owns every decision. Agents propose, execute, review – they never decide. Agents operate inside narrow Rules of Engagement. They do not redefine goals, values, or strategy. The human is accountable for every material action performed by agents.
+
+### III. Own Your Stack
+Your data stays yours. Knowledge Lake lives in a git repo you control – not in someone else's SaaS. Observability runs on open-source – OpenTelemetry, Prometheus, Grafana – not on a Datadog invoice. Local models where it makes sense. What goes to the cloud stops being yours. Open-source. Self-hosted. Sovereign.
+
+### IV. The Eye Sees Everything
+Every agent action is logged. Every tool is a named gate with a risk level and a paper trail. Read-only by default – mutations require explicit Statute and human approval. You cannot command what you cannot see.
+
+### V. Small and Sharp
+Capability is modular. Each skill is scoped, testable, and replaceable. Complex workflows are compositions of small skills, not monolithic mega-agents.
 
 ## Key Concepts
 
-- **Shepherd** — the human commander; strategic decisions, oversight, final authority
-- **Staff** — the instrument of control; rules, constraints, directives
-- **Pasture** — the bounded environment where agents operate
-- **Gates** — entry and exit points; what flows in, what flows out
-- **Memory** — what the herd remembers across sessions
-- **Eye** — observability; the shepherd sees everything
+- **Shepherd** – the human commander; strategic decisions, oversight, final authority
+- **Staff** – the instrument of control; rules, constraints, directives
+- **Pasture** – the bounded environment where agents operate
+- **Gates** – entry and exit points; what flows in, what flows out
+- **Memory** – what the herd remembers across sessions
+- **Eye** – observability; the shepherd sees everything
 
 ## Topics
 
@@ -28,6 +43,7 @@ AI agents are dumb like sheep. Out of the box, they wander, hallucinate, and for
 
 - Website: https://digitalshepard.ai
 - Articles: https://digitalshepard.ai/articles
+- Manifesto: https://digitalshepard.ai/manifesto
 - About: https://digitalshepard.ai/about
 - Tags: https://digitalshepard.ai/tags
 - Archive: https://digitalshepard.ai/archive
@@ -35,4 +51,4 @@ AI agents are dumb like sheep. Out of the box, they wander, hallucinate, and for
 
 ## Author
 
-Shepard — AI Governance
+Shepard – AI Governance
