@@ -9,14 +9,6 @@
         />
         <u-separator type="dotted"/>
         <u-content-toc v-if="data" :links="data.body.toc?.links" highlight/>
-        <u-field-group class="w-full">
-          <u-button @click="share" label="Share this article"
-                    icon="material-symbols:share" variant="subtle"
-                    color="neutral" class="grow"/>
-          <u-dropdown-menu :items="[{ label: 'Copy URL', icon: 'mdi:link-variant', onSelect: copyLink }]">
-            <u-button icon="i-lucide-chevron-down" variant="subtle" color="neutral"/>
-          </u-dropdown-menu>
-        </u-field-group>
       </u-page-aside>
     </template>
 
@@ -39,6 +31,7 @@
           </div>
         </div>
         <div class="flex flex-row items-center gap-4">
+          <share-article :url="articleUrl" :title="data?.title ?? ''"/>
           <p class="flex flex-row items-center gap-1 typ-sublabel">
             <icon name="material-symbols:calendar-today-rounded" class="text-primary"/>
             {{ formatDate(data?.date) }}
@@ -54,6 +47,9 @@
     <u-content-toc v-if="data" :links="data.body.toc?.links" highlight class="lg:hidden"/>
     <u-page-body>
       <content-renderer v-if="data" id="content" :value="data" class="markdown-content flex-1"/>
+
+      <share-article :url="articleUrl" :title="articleTitle" inline class="mt-8 max-lg:hidden"/>
+
       <u-separator/>
       <p class="font-semibold">Related articles</p>
       <ul class="flex flex-col gap-3">
@@ -75,8 +71,6 @@ import appMeta from "~/app.meta";
 
 const route = useRoute();
 const authorEl = ref<HTMLElement | null>();
-const clipboard = useClipboard();
-const toast = useToast();
 
 function readingTime(text?: string) {
   if (!text) return "1 min read";
@@ -106,14 +100,10 @@ const breadcrumbItems = computed(() => [
 
 updateMeta();
 
-async function copyLink() {
-  await clipboard.copy(window.location.href);
-  toast.add({title: "Copied to clipboard", icon: "material-symbols:check-circle-rounded", color: "success"});
-}
-
-async function share() {
-  await navigator.share({url: route.fullPath});
-}
+const articleUrl = computed(() => `${appMeta.url}${route.path}`);
+const articleTitle = computed(() => data.value?.title ?? "");
+provide("shareUrl", articleUrl);
+provide("shareTitle", articleTitle);
 
 function updateMeta() {
   useSchemaOrg([
